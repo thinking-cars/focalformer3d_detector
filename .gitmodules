@@ -1,3 +1,6 @@
 [submodule ".openads-dev-environment"]
 	path = .openads-dev-environment
 	url = https://github.com/openads-project/openads-dev-environment.git
+[submodule "FocalFormer3D"]
+	path = FocalFormer3D
+	url = https://github.com/NVlabs/FocalFormer3D.git
