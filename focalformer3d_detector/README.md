@@ -1,46 +1,25 @@
-# focalformer3d_detector
+# `focalformer3d_detector`
 
-ROS 2 package integrating the offivial FocalFormer3D implementation by NVlabs
+ROS 2 package integrating the official FocalFormer3D implementation by NVlabs
 
-- [Container Images](#container-images)
-- [focalformer3d_detector](#focalformer3d_detector)
+- [focalformer3d\_detector](#focalformer3d_detector)
+  - [Model Dependencies](#model-dependencies)
+  - [`focalformer3d_detector`](#focalformer3d_detector-1)
+    - [Subscribed Topics](#subscribed-topics)
+    - [Published Topics](#published-topics)
+    - [Parameters](#parameters)
+    - [Notes](#notes)
 
+## Launch Files
 
-### Container Images
+### [`focalformer3d_detector_launch.py`](launch/focalformer3d_detector_launch.py)
 
-| Description | Image:Tag | Default Command |
-| --- | --- | -- |
-|  |  |  |
-
-
-## `focalformer3d_detector`
-
-### Subscribed Topics
-
-| Topic | Type | Description |
+| Argument | Default | Description |
 | --- | --- | --- |
-|  |  |  |
-
-### Published Topics
-
-| Topic | Type | Description |
-| --- | --- | --- |
-|  |  |  |
-
-### Services
-
-| Service | Type | Description |
-| --- | --- | --- |
-|  |  |  |
-
-### Actions
-
-| Action | Type | Description |
-| --- | --- | --- |
-|  |  |  |
-
-### Parameters
-
-| Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| `input_topic` | `"~/input"` | TODO |
+| `output_topic` | `"~/output"` | TODO |
+| `name` | `"focalformer3d_detector"` | node name |
+| `namespace` | `""` | node namespace |
+| `params` | `os.path.join(get_package_share_directory("focalformer3d_detector"), "config", "params.yml")` | path to parameter file |
+| `log_level` | `"info"` | ROS logging level (debug, info, warn, error, fatal) |
+| `use_sim_time` | `"false"` | use simulation clock |

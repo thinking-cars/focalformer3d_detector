@@ -108,6 +108,7 @@ Package and node interfaces are documented in the respective package READMEs lis
 
 | Package | Description |
 | --- | --- |
+| [focalformer3d_detector](focalformer3d_detector/README.md) | ROS 2 package integrating the official FocalFormer3D implementation by NVlabs |
 
 ## ⚖️ Licensing
 
