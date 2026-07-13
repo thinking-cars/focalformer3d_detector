@@ -1,15 +1,14 @@
-# openads_demo_module
+# FocalFormer3D
 
 <p align="center">
-  <a href="https://github.com/openads-project"><img src="https://img.shields.io/badge/OpenADS-f5ff01"/></a>
   <a href="https://www.ros.org"><img src="https://img.shields.io/badge/ROS 2-jazzy-22314e"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/releases/latest"><img src="https://img.shields.io/github/v/release/openads-project/openads_demo_module"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/openads_demo_module"/></a>
+  <a href="https://github.com/thinking-cars/FocalFormer3D/releases/latest"><img src="https://img.shields.io/github/v/release/thinking-cars/FocalFormer3D"/></a>
+  <a href="https://github.com/thinking-cars/FocalFormer3D/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thinking-cars/FocalFormer3D"/></a>
   <br>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/compose-oci.yml/badge.svg"/></a>
-  <a href="https://openads-project.github.io/openads_demo_module"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/docs.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/openads_demo_module/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/openads_demo_module/actions/workflows/consistency.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docker-ros.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/compose-oci.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/compose-oci.yml/badge.svg"/></a>
+  <a href="https://thinking-cars.github.io/FocalFormer3D"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docs.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/consistency.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
 **Demo repository for an OpenADS module**
@@ -68,11 +67,11 @@ This repository serves as a demo for an OpenADS module, showcasing the structure
 
 1. Clone the repository.
     ```bash
-    git clone https://github.com/openads-project/openads_demo_module.git
+    git clone https://github.com/thinking-cars/FocalFormer3D.git
     ```
 1. Initialize the [`.openads-dev-environment`](https://github.com/openads-project/openads-dev-environment) submodule containing development environment configuration.
     ```bash
-    cd openads_demo_module
+    cd FocalFormer3D
     git submodule update --init --recursive
     ```
 1. Open the repository in [Visual Studio Code](https://code.visualstudio.com).
@@ -105,28 +104,15 @@ colcon test-result --verbose
 
 ## 📝 Documentation
 
-Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://openads-project.github.io/openads_demo_module).
+Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://thinking-cars.github.io/FocalFormer3D).
 
 | Package | Description |
 | --- | --- |
-| [openads_demo_module](openads_demo_module/README.md) | ROS 2 C++ package template for OpenADS |
-| [openads_demo_module_interfaces](openads_demo_module_interfaces/README.md) | ROS interface definitions for openads_demo_module |
 
 ## ⚖️ Licensing
 
-The source code in this repository is licensed under Apache-2.0, see [LICENSE](LICENSE). Container images provided by this repository may contain third-party software shipped with their own license terms.
+This repository integrates code from the [NVlabs/FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) repository published under [Nvidia Source Code License-NC](https://github.com/NVlabs/FocalFormer3D/blob/master/LICENSE). Our modifications are licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 ## 🙏 Acknowledgements
 
-Development and maintenance of this repository are supported by the following projects. We acknowledge the funding of the respective institutions.
-
-| Project | Funding Institution | Grant Number |
-| --- | --- | --- |
-| Demo Project | Demo Funding Institution | Demo Grant Number |
-
-<p>
-  <img src="https://www.drought.uni-freiburg.de/stressres/images/bmftr-logo/image" height=70>
-  <img src="https://ec.europa.eu/regional_policy/images/information-sources/logo-download-center/eu_funded_en.jpg" height=70>
-</p>
-
-<sub><sup>Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Climate, Infrastructure and Environment Executive Agency (CINEA). Neither the European Union nor CINEA can be held responsible for them.</sup></sub>
+This project is maintained by [Thinking Cars](https://www.thinking-cars.de). We acknowledge the work of the [original authors at NVlabs](https://github.com/NVlabs).
