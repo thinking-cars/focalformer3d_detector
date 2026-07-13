@@ -19,7 +19,7 @@ jobs:
         with:
           platform: amd64
           target: dev,run
-          base-image: rwthika/ros2:jazzy
+          base-image: rwthika/ros2-torch:jazzy
           rmw-implementation: rmw_zenoh_cpp
           command: ros2 launch openads_demo_module openads_demo_module_launch.py
           enable-industrial-ci: true
