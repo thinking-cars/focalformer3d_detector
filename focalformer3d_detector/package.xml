@@ -15,6 +15,11 @@
   <depend>perception_msgs_utils</depend>
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
+  <depend>sensor_msgs_py</depend>
+  <depend>python3-numpy</depend>
+
+  <!-- model dependencies (torch, mmcv-full, mmdet, mmdetection3d) are not resolvable
+       via rosdep and must be installed manually, see README -->
 
   <export>
     <build_type>ament_python</build_type>
