@@ -1,10 +1,12 @@
 from typing import Any, Optional, Union
 
+import perception_msgs_utils as pmu
 import rclpy
 import rclpy.exceptions
-from geometry_msgs.msg import PointStamped
+from perception_msgs.msg import HEXAMOTION, Object, ObjectList
 from rcl_interfaces.msg import FloatingPointRange, IntegerRange, ParameterDescriptor, SetParametersResult
 from rclpy.node import Node
+from sensor_msgs.msg import PointCloud2
 
 
 class Focalformer3DDetector(Node):
@@ -130,22 +132,32 @@ class Focalformer3DDetector(Node):
         self.add_on_set_parameters_callback(self.parameters_callback)
 
         # subscriber for handling incoming messages
-        self.subscriber = self.create_subscription(PointStamped, "~/input", self.topic_callback, qos_profile=10)
+        self.subscriber = self.create_subscription(PointCloud2, "~/input", self.topic_callback, qos_profile=1)
         self.get_logger().info(f"Subscribed to '{self.subscriber.topic_name}'")
 
         # publisher for publishing outgoing messages
-        self.publisher = self.create_publisher(PointStamped, "~/output", qos_profile=10)
+        self.publisher = self.create_publisher(ObjectList, "~/output", qos_profile=5)
         self.get_logger().info(f"Publishing to '{self.publisher.topic_name}'")
 
-    def topic_callback(self, msg: PointStamped):
+    def topic_callback(self, msg: PointCloud2):
         """Processes messages received by a subscriber
 
         Args:
-            msg (PointStamped): message
+            msg (PointCloud2): message
         """
 
         self.get_logger().info(f"Message received with stamp: '{msg.header.stamp}'")
-        self.publisher.publish(msg)
+
+        object_list = ObjectList()
+
+        for i in range(5):  # Example: create 5 dummy objects
+            obj = Object()
+            pmu.initialize_state(obj, HEXAMOTION.MODEL_ID)
+            pmu.set_x(obj, 1.0)
+            # TODO: Implement the FocalFormer3D detection logic here and populate the object_list with detected objects
+            object_list.objects.append(obj)
+
+        self.publisher.publish(object_list)
 
 
 def main():
