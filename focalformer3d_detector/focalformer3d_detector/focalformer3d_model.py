@@ -1,3 +1,6 @@
+# Copyright Thinking Cars GmbH
+# SPDX-License-Identifier: Apache-2.0
+
 """Wrapper around the original NVlabs FocalFormer3D implementation (mmdetection3d 0.17.x based).
 
 This module isolates all model-related code and heavy dependencies (torch, mmcv, mmdet3d, ...)
