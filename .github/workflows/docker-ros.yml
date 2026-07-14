@@ -21,9 +21,9 @@ jobs:
           target: dev,run
           base-image: rwthika/ros2-torch:jazzy
           rmw-implementation: rmw_zenoh_cpp
-          command: ros2 launch openads_demo_module openads_demo_module_launch.py
+          command: ros2 launch focalformer3d_detector focalformer3d_detector_launch.py
           enable-industrial-ci: true
-          label-maintainer: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
-          label-authors: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
+          label-maintainer: Thinking Cars GmbH <info@thinking-cars.de>
+          label-authors: Thinking Cars GmbH <info@thinking-cars.de>
         env:
           TARGET_CMAKE_ARGS: -DCMAKE_EXPORT_COMPILE_COMMANDS=1
