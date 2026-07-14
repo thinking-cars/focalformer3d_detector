@@ -47,7 +47,7 @@ class Focalformer3DDetector(Node):
             name="config_file",
             param_type=rclpy.Parameter.Type.STRING,
             description="Path to the FocalFormer3D mmdet3d config file",
-            default="/docker-ros/ws/src/target/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py",
+            default="/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py",
             add_to_auto_reconfigurable_params=False,
             read_only=True,
         )
@@ -55,7 +55,7 @@ class Focalformer3DDetector(Node):
             name="checkpoint_file",
             param_type=rclpy.Parameter.Type.STRING,
             description="Path to the FocalFormer3D model checkpoint (.pth)",
-            default="/docker-ros/ws/src/target/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth",
+            default="/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth",
             add_to_auto_reconfigurable_params=False,
             read_only=True,
         )

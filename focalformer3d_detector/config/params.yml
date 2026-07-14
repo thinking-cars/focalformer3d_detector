@@ -1,7 +1,7 @@
 /**/*:
   ros__parameters:
-    config_file: /docker-ros/ws/src/target/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py
-    checkpoint_file: /docker-ros/ws/src/target/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth
+    config_file: /docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py
+    checkpoint_file: /docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth
     device: cuda:0
     score_threshold: 0.1
     intensity_scale: 1.0
