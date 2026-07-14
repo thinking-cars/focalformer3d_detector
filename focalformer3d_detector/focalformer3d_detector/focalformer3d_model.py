@@ -85,6 +85,11 @@ class FocalFormer3DModel:
             )
         if repo_root not in sys.path:
             sys.path.insert(0, repo_root)
+        # the plugin JIT-compiles custom CUDA ops (bev_pool, localattention) on import,
+        # which needs the pip-installed ninja from the user site on PATH
+        user_bin = os.path.join(os.path.expanduser("~"), ".local", "bin")
+        if os.path.isdir(user_bin) and user_bin not in os.environ.get("PATH", "").split(os.pathsep):
+            os.environ["PATH"] = user_bin + os.pathsep + os.environ.get("PATH", "")
         # registers all custom FocalFormer3D modules (detector, neck, head, bbox coder, ...)
         importlib.import_module("projects.mmdet3d_plugin")
 

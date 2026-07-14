@@ -21,7 +21,6 @@ setup(
     maintainer_email="vankempen@thinking-cars.de",
     description="ROS 2 package integrating the official FocalFormer3D implementation by NVlabs",
     license="Apache-2.0",
-    tests_require=["pytest"],
     entry_points={
         "console_scripts": ["focalformer3d_detector = focalformer3d_detector.focalformer3d_detector:main"],
     },
