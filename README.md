@@ -13,6 +13,13 @@
 
 This repository integrates the [FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) lidar detection model into [OpenADS](https://github.com/openads-project).
 
+<p align="center">
+  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
+</p>
+
+
+## 🚀 Quick Start
+
 > [!IMPORTANT]
 > This repository is a prototypical integration of `FocalFormer3D` into [OpenADS](https://github.com/openads-project) for testing and benchmarking purposes. Thus, only necessary changes were made for integration without adopting the original code to the OpenADS consistency guidelines.
 
@@ -20,12 +27,6 @@ The following teaser shows **detected objects** on validation data from the nuSc
 
 ![Teaser](./assets/teaser.gif)
 
-<p align="center">
-  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
-</p>
-
-
-## 🚀 Quick Start
 
 1. Start a container of the pre-built runtime image.
     ```bash
@@ -86,6 +87,8 @@ Package and node interfaces are documented in the respective package READMEs lis
 | [focalformer3d_detector](focalformer3d_detector/README.md) | ROS 2 package integrating the official FocalFormer3D implementation by NVlabs |
 
 ## ⚖️ Licensing
+
+The source code in this repository is licensed under Apache-2.0, see [LICENSE](LICENSE). Container images provided by this repository may contain third-party software shipped with their own license terms.
 
 This repository integrates code from the [NVlabs/FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) repository published under [Nvidia Source Code License-NC](https://github.com/NVlabs/FocalFormer3D/blob/master/LICENSE). Our modifications are licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
