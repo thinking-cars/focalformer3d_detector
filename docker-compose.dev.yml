@@ -1,0 +1,15 @@
+services:
+
+  autonomy-datasets:
+    extends:
+      file: docker-compose.yml
+      service: autonomy-datasets
+
+  focalformer3d-detector:
+    extends:
+      file: docker-compose.yml
+      service: focalformer3d-detector
+    image: ghcr.io/thinking-cars/focalformer3d_detector:latest-dev
+    command: sleep infinity
+    volumes:
+      - .:/docker-ros/ws/src/target

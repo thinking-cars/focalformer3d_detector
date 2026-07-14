@@ -33,7 +33,3 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-    image: ghcr.io/thinking-cars/focalformer3d_detector:latest-dev
-    command: sleep infinity
-    volumes:
-      - .:/docker-ros/ws/src/target
