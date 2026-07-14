@@ -1,32 +1,28 @@
 services:
 
-  openads-demo-module:
-    image: ghcr.io/openads-project/openads_demo_module:v1.0.0
+  focalformer3d-detector:
+    image: ghcr.io/thinking-cars/focalformer3d_detector:v0.1.0
     environment:
       # --- name ------
       NAMESPACE: /
-      NAME: openads_demo_module
-      # --- inputs ----
-      INPUT_TOPIC: ~/input
-      # --- outputs ---
-      OUTPUT_TOPIC: ~/output
+      NAME: focalformer3d_detector
       # --- other -----
-      SERVICE_TOPIC: ~/service
+      INPUT_TOPIC: ~/input
+      OUTPUT_TOPIC: ~/output
       LOG_LEVEL: ${LOG_LEVEL:-info}
       USE_SIM_TIME: ${USE_SIM_TIME:-false}
-      PARAMS: ${PARAMS:-/docker-ros/ws/install/openads_demo_module/share/openads_demo_module/config/params.yml}
+      PARAMS: ${PARAMS:-/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml}
     command:
       - /bin/bash
       - -ic
       - |
-        ros2 launch openads_demo_module openads_demo_module_launch.py \
+        ros2 launch focalformer3d_detector focalformer3d_detector_launch.py \
           namespace:=$${NAMESPACE} \
           name:=$${NAME} \
           log_level:=$${LOG_LEVEL} \
           use_sim_time:=$${USE_SIM_TIME} \
           params:=$${PARAMS} \
           input_topic:=$${INPUT_TOPIC} \
-          output_topic:=$${OUTPUT_TOPIC} \
-          service_topic:=$${SERVICE_TOPIC}
+          output_topic:=$${OUTPUT_TOPIC}
     # volumes:
-    #   - ./params.yml:/docker-ros/ws/install/openads_demo_module/share/openads_demo_module/config/params.yml
+    #   - ./params.yml:/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml
