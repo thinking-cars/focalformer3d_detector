@@ -1,14 +1,14 @@
-# FocalFormer3D
+# focalformer3d_detector
 
 <p align="center">
   <a href="https://www.ros.org"><img src="https://img.shields.io/badge/ROS 2-jazzy-22314e"/></a>
-  <a href="https://github.com/thinking-cars/FocalFormer3D/releases/latest"><img src="https://img.shields.io/github/v/release/thinking-cars/FocalFormer3D"/></a>
-  <a href="https://github.com/thinking-cars/FocalFormer3D/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thinking-cars/FocalFormer3D"/></a>
+  <a href="https://github.com/thinking-cars/focalformer3d_detector/releases/latest"><img src="https://img.shields.io/github/v/release/thinking-cars/focalformer3d_detector"/></a>
+  <a href="https://github.com/thinking-cars/focalformer3d_detector/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thinking-cars/focalformer3d_detector"/></a>
   <br>
-  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docker-ros.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/compose-oci.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/compose-oci.yml/badge.svg"/></a>
-  <a href="https://thinking-cars.github.io/FocalFormer3D"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/docs.yml/badge.svg"/></a>
-  <a href="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/consistency.yml"><img src="https://github.com/thinking-cars/FocalFormer3D/actions/workflows/consistency.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/compose-oci.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/compose-oci.yml/badge.svg"/></a>
+  <a href="https://thinking-cars.github.io/focalformer3d_detector"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docs.yml/badge.svg"/></a>
+  <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/consistency.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
 This repository integrates the [FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) lidar detection model into [OpenADS](https://github.com/openads-project).
@@ -42,11 +42,11 @@ The following teaser shows **detected objects** on validation data from the nuSc
 
 1. Clone the repository.
     ```bash
-    git clone https://github.com/thinking-cars/FocalFormer3D.git
+    git clone https://github.com/thinking-cars/focalformer3d_detector.git
     ```
 1. Initialize the [`.openads-dev-environment`](https://github.com/openads-project/openads-dev-environment) submodule containing development environment configuration.
     ```bash
-    cd FocalFormer3D
+    cd focalformer3d_detector
     git submodule update --init --recursive
     ```
 1. Open the repository in [Visual Studio Code](https://code.visualstudio.com).
@@ -79,7 +79,7 @@ colcon test-result --verbose
 
 ## 📝 Documentation
 
-Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://thinking-cars.github.io/FocalFormer3D).
+Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://thinking-cars.github.io/focalformer3d_detector).
 
 | Package | Description |
 | --- | --- |

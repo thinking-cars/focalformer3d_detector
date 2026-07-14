@@ -16,8 +16,8 @@ ROS 2 package integrating the official FocalFormer3D implementation by NVlabs
 
 | Argument | Default | Description |
 | --- | --- | --- |
-| `input_topic` | `"~/input"` | TODO |
-| `output_topic` | `"~/output"` | TODO |
+| `input_topic` | `"~/input"` | input point cloud |
+| `output_topic` | `"~/output"` | output object list |
 | `name` | `"focalformer3d_detector"` | node name |
 | `namespace` | `""` | node namespace |
 | `params` | `os.path.join(get_package_share_directory("focalformer3d_detector"), "config", "params.yml")` | path to parameter file |
