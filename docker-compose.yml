@@ -1,7 +1,7 @@
 services:
 
   autonomy-datasets:
-    image: ghcr.io/thinking-cars/autonomy_datasets:latest
+    image: ghcr.io/thinking-cars/autonomy_datasets:v1.3.0
     command: bash -ic "ros2 launch autonomy_datasets autonomy_datasets.launch.py dataset:=nuscenes loop:=true"
     environment:
       RMW_IMPLEMENTATION: rmw_fastrtps_cpp
