@@ -21,7 +21,7 @@ This repository integrates the [FocalFormer3D](https://github.com/NVlabs/FocalFo
 ## 🚀 Quick Start
 
 > [!IMPORTANT]
-> This repository is a prototypical integration of `FocalFormer3D` into [OpenADS](https://github.com/openads-project) for testing and benchmarking purposes. Thus, only necessary changes were made for integration without adopting the original code to the OpenADS consistency guidelines.
+> This repository is a prototypical integration of `FocalFormer3D` into [OpenADS](https://github.com/openads-project) for testing and benchmarking purposes in the context of research activities. Thus, only necessary changes were made for integration without adopting the original code to the OpenADS consistency guidelines.
 
 The following teaser shows **detected objects** on validation data from the nuScenes Dataset provided by [autonomy_datasets](https://github.com/thinking-cars/autonomy_datasets).
 
