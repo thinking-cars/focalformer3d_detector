@@ -1,5 +1,5 @@
 # Copyright Thinking Cars GmbH
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: LicenseRef-NvidiaSourceCodeLicense-NC
 
 import math
 from typing import Any, Optional, Union

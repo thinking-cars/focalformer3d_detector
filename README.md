@@ -88,9 +88,9 @@ Package and node interfaces are documented in the respective package READMEs lis
 
 ## ⚖️ Licensing
 
-The source code in this repository is licensed under Apache-2.0, see [LICENSE](LICENSE). Container images provided by this repository may contain third-party software shipped with their own license terms.
+The source code in this repository is licensed under the [Nvidia Source Code License-NC](LICENSE), see [LICENSE](LICENSE). Note that this license permits use for **non-commercial purposes only**, i.e., for research or evaluation purposes. Container images provided by this repository may contain third-party software shipped with their own license terms.
 
-This repository integrates code from the [NVlabs/FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) repository published under [Nvidia Source Code License-NC](https://github.com/NVlabs/FocalFormer3D/blob/master/LICENSE). Our modifications are licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
+This repository integrates code from the [NVlabs/FocalFormer3D](https://github.com/NVlabs/FocalFormer3D) repository published under the [Nvidia Source Code License-NC](https://github.com/NVlabs/FocalFormer3D/blob/master/LICENSE). As a derivative work, our modifications are published under the same license.
 
 ## 🙏 Acknowledgements
 

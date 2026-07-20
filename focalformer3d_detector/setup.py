@@ -1,5 +1,5 @@
 # Copyright Thinking Cars GmbH
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: LicenseRef-NvidiaSourceCodeLicense-NC
 
 import os
 from glob import glob
@@ -50,7 +50,7 @@ setup(
     maintainer="Raphael van Kempen",
     maintainer_email="vankempen@thinking-cars.de",
     description="ROS 2 package integrating the official FocalFormer3D implementation by NVlabs",
-    license="Apache-2.0",
+    license="Nvidia Source Code License-NC",
     entry_points={
         "console_scripts": ["focalformer3d_detector = focalformer3d_detector.focalformer3d_detector:main"],
     },

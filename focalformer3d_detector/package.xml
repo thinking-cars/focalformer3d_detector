@@ -9,7 +9,7 @@
   <maintainer email="vankempen@thinking-cars.de">Raphael van Kempen</maintainer>
   <author email="vankempen@thinking-cars.de">Raphael van Kempen</author>
 
-  <license>Apache-2.0</license>
+  <license file="../LICENSE">Nvidia Source Code License-NC</license>
 
   <depend>perception_msgs</depend>
   <depend>perception_msgs_utils</depend>

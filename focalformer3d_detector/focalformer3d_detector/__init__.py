@@ -1,4 +1,4 @@
 # Copyright Thinking Cars GmbH
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: LicenseRef-NvidiaSourceCodeLicense-NC
 
 """Top-level package for focalformer3d_detector."""

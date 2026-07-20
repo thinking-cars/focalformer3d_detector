@@ -1,5 +1,5 @@
 # Copyright Thinking Cars GmbH
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: LicenseRef-NvidiaSourceCodeLicense-NC
 
 """Wrapper around the original NVlabs FocalFormer3D implementation (mmdetection3d 0.17.x based).
 
