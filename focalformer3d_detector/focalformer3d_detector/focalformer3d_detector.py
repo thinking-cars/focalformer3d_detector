@@ -8,6 +8,7 @@ import numpy as np
 import perception_msgs_utils as pmu
 import rclpy
 import rclpy.exceptions
+from focalformer3d_detector.checkpoint import CHECKPOINT_URL, ensure_checkpoint
 from focalformer3d_detector.focalformer3d_model import Detection, FocalFormer3DModel
 from numpy.lib.recfunctions import structured_to_unstructured
 from perception_msgs.msg import HEXAMOTION, Object, ObjectClassification, ObjectList
@@ -54,8 +55,17 @@ class Focalformer3DDetector(Node):
         self.checkpoint_file = self.declare_and_load_parameter(
             name="checkpoint_file",
             param_type=rclpy.Parameter.Type.STRING,
-            description="Path to the FocalFormer3D model checkpoint (.pth)",
-            default="/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth",
+            description="Path the FocalFormer3D model checkpoint (.pth) is cached at; "
+            "it is downloaded from 'checkpoint_url' on first use if not present",
+            default="/docker-ros/ws/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth",
+            add_to_auto_reconfigurable_params=False,
+            read_only=True,
+        )
+        self.checkpoint_url = self.declare_and_load_parameter(
+            name="checkpoint_url",
+            param_type=rclpy.Parameter.Type.STRING,
+            description="URL to download the FocalFormer3D model checkpoint from if it is not cached yet",
+            default=CHECKPOINT_URL,
             add_to_auto_reconfigurable_params=False,
             read_only=True,
         )
@@ -90,18 +100,27 @@ class Focalformer3DDetector(Node):
     def load_model(self) -> FocalFormer3DModel:
         """Loads the FocalFormer3D model from the configured config and checkpoint files
 
+        The checkpoint is not shipped with the package; it is downloaded on first use and
+        cached at 'checkpoint_file' for subsequent starts.
+
         Returns:
             FocalFormer3DModel: model ready for inference
         """
 
+        checkpoint_file = ensure_checkpoint(
+            destination=self.checkpoint_file,
+            url=self.checkpoint_url,
+            log=self.get_logger().info,
+        )
+
         self.get_logger().info(
             f"Loading FocalFormer3D model from config '{self.config_file}' "
-            f"and checkpoint '{self.checkpoint_file}' to device '{self.device}' ..."
+            f"and checkpoint '{checkpoint_file}' to device '{self.device}' ..."
         )
         start_time = self.get_clock().now()
         model = FocalFormer3DModel(
             config_file=self.config_file,
-            checkpoint_file=self.checkpoint_file,
+            checkpoint_file=checkpoint_file,
             device=self.device,
         )
         loading_duration = (self.get_clock().now() - start_time).nanoseconds / 1e9

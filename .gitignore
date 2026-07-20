@@ -1,1 +1,5 @@
 __pycache__/
+
+# model checkpoints are downloaded at runtime, not committed
+*.pth
+checkpoints/

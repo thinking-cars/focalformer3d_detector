@@ -24,5 +24,9 @@ services:
           params:=$${PARAMS} \
           input_topic:=$${INPUT_TOPIC} \
           output_topic:=$${OUTPUT_TOPIC}
-    # volumes:
+    volumes:
+      - focalformer3d-checkpoints:/docker-ros/ws/checkpoints
     #   - ./params.yml:/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml
+
+volumes:
+  focalformer3d-checkpoints:

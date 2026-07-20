@@ -8,6 +8,18 @@ The [`focalformer3d_detector`](../focalformer3d_detector) package wraps the orig
 
 - [`focalformer3d_model.py`](../focalformer3d_detector/focalformer3d_detector/focalformer3d_model.py) — framework-agnostic model wrapper. Imports the heavy dependencies (torch, mmcv, mmdet3d) lazily, registers the FocalFormer3D mmdet3d plugin, builds the detector from the original config, loads the checkpoint, and exposes `detect(points) -> DetectionResult` for numpy point clouds.
 - [`focalformer3d_detector.py`](../focalformer3d_detector/focalformer3d_detector/focalformer3d_detector.py) — ROS 2 node. Converts `PointCloud2` to a `(N, 4)` numpy array (x, y, z, intensity), runs the model, and converts detections to `perception_msgs/Object` (HEXAMOTION state model).
+- [`checkpoint.py`](../focalformer3d_detector/focalformer3d_detector/checkpoint.py) — lazy checkpoint download (standard library only), see [Model Checkpoint](#model-checkpoint).
+
+### Model Checkpoint
+
+The ~189 MiB checkpoint (`FocalFormer3D_L`, nuScenes, mAP 66.4 / NDS 70.9) is not committed to this repository. On the first `load_model()` the node downloads it from the location published by the original authors (parameter `checkpoint_url`) and caches it at `checkpoint_file` (default `/docker-ros/ws/checkpoints/`); later starts reuse the cached copy.
+
+Implementation notes:
+
+- The download is served by Google Drive, which puts files above its virus-scan size limit behind a confirmation page. `checkpoint.py` submits that form (one extra request, cookies carried by a `urllib` opener) to reach the file itself — this is the same mechanism `gdown` implements, inlined here to avoid the extra dependency.
+- The file is written to a temporary file in the target directory and moved into place only once complete, s.t. an interrupted download is never mistaken for a cached checkpoint.
+- The content is verified against a pinned SHA-256 (`decbe875…`, identical to the file previously committed via Git LFS). A cached file failing verification is re-downloaded; a fresh download failing it is deleted and raises.
+- The cache lives inside the container, so it is re-downloaded after the container is recreated. Mount a volume at the parent directory of `checkpoint_file` to persist it (see [docker/compose/docker-compose.yml](../docker/compose/docker-compose.yml)).
 
 ### Model Loading
 

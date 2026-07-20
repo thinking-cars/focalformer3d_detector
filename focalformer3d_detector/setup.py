@@ -12,11 +12,14 @@ package_name = "focalformer3d_detector"
 def data_files_from_tree(source_dir, install_root, prune=("__pycache__", ".git")):
     """Recursively map every file under ``source_dir`` into ``install_root``, keeping structure.
 
-    The FocalFormer3D repository and the checkpoints directory live one level up from this
-    package (next to it in the repository root). They are copied into the package share
-    directory so they end up in the ROS install space, which is the only thing kept in the
-    ``run`` Docker image (see docker/docker-ros/docker/Dockerfile). The model needs the full
-    FocalFormer3D repository layout at ``<config>/../../..`` to import its mmdet3d plugin.
+    The FocalFormer3D repository lives one level up from this package (next to it in the
+    repository root). It is copied into the package share directory so it ends up in the ROS
+    install space, which is the only thing kept in the ``run`` Docker image (see
+    docker/docker-ros/docker/Dockerfile). The model needs the full FocalFormer3D repository
+    layout at ``<config>/../../..`` to import its mmdet3d plugin.
+
+    The model checkpoint is deliberately not installed here: it is downloaded at runtime on
+    first use of the node (see focalformer3d_detector/checkpoint.py).
     """
     entries = []
     base_parent = os.path.dirname(source_dir.rstrip("/"))
@@ -41,10 +44,9 @@ setup(
         (os.path.join("share", package_name, "launch"), glob("launch/*launch.[pxy][yma]*")),
         (os.path.join("share", package_name, "config"), glob("config/*")),
     ]
-    # ship the FocalFormer3D repo and model checkpoint into the install space so they are
-    # available in the install-only run image (referenced by config/params.yml)
-    + data_files_from_tree("../FocalFormer3D", share_dir)
-    + data_files_from_tree("../checkpoints", share_dir),
+    # ship the FocalFormer3D repo into the install space so it is available in the
+    # install-only run image (referenced by config/params.yml)
+    + data_files_from_tree("../FocalFormer3D", share_dir),
     install_requires=["setuptools"],
     zip_safe=True,
     maintainer="Raphael van Kempen",
