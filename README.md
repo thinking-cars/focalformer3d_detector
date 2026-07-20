@@ -23,6 +23,9 @@ This repository integrates the [FocalFormer3D](https://github.com/NVlabs/FocalFo
 > [!IMPORTANT]
 > This repository is a prototypical integration of `FocalFormer3D` into [OpenADS](https://github.com/openads-project) for testing and benchmarking purposes in the context of research activities. Thus, only necessary changes were made for integration without adopting the original code to the OpenADS consistency guidelines.
 
+> [!NOTE]
+> Due to the resulting image size, this repository cannot be built by the `docker-ros` CI workflow but must be built locally with `./docker/docker-ros/scripts/build.sh`. The build can be configured in the [.env](./.env) file.
+
 The following teaser shows **detected objects** on validation data from the nuScenes Dataset provided by [autonomy_datasets](https://github.com/thinking-cars/autonomy_datasets).
 
 ![Teaser](./assets/teaser.gif)
