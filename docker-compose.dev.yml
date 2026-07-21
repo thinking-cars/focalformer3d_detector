@@ -13,3 +13,6 @@ services:
     command: sleep infinity
     volumes:
       - .:/docker-ros/ws/src/target
+
+volumes:
+  focalformer3d-checkpoints:
