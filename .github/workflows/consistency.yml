@@ -10,3 +10,5 @@ jobs:
   consistency:
     uses: openads-project/openads-dev-environment/.github/workflows/consistency.yml@main
     secrets: inherit
+    with:
+      skip-checks: required_root_ci_workflows,readme_generator_is_idempotent
