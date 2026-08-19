@@ -11,6 +11,41 @@ ROS 2 package integrating the official FocalFormer3D implementation by NVlabs
     - [Parameters](#parameters)
     - [Notes](#notes)
 
+## Nodes
+
+### `focalformer3d_detector`
+
+```mermaid
+flowchart LR
+    NODE("focalformer3d_detector")
+    S0:::hidden -->|~/input| NODE
+    NODE -->|~/output| P0:::hidden
+    classDef hidden display: none;
+```
+
+#### Subscribed Topics
+
+| Topic | Type | Description |
+| --- | --- | --- |
+| `~/input` | `sensor_msgs/msg/PointCloud2` | input point cloud |
+
+#### Published Topics
+
+| Topic | Type | Description |
+| --- | --- | --- |
+| `~/output` | `perception_msgs/msg/ObjectList` | detected objects |
+
+#### Parameters
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `config_file` | `string` | `/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py` | Path to the FocalFormer3D mmdet3d config file |
+| `checkpoint_file` | `string` | `/docker-ros/ws/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth` | Path the FocalFormer3D model checkpoint (.pth) is cached at; it is downloaded from 'checkpoint_url' on first use if not present |
+| `checkpoint_url` | `string` | `CHECKPOINT_URL` | URL to download the FocalFormer3D model checkpoint from if it is not cached yet |
+| `device` | `string` | `cuda:0` | CUDA device to run inference on |
+| `score_threshold` | `float` | `0.1` | Minimum detection confidence for an object to be published |
+| `intensity_scale` | `float` | `1.0` | Scale factor applied to the intensity values of the input point cloud; the model was trained on nuScenes intensities in [0, 255] |
+
 ## Launch Files
 
 ### [`focalformer3d_detector_launch.py`](launch/focalformer3d_detector_launch.py)

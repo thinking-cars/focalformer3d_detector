@@ -1,0 +1,30 @@
+services:
+
+  focalformer3d-detector:
+    image: ghcr.io/thinking-cars/focalformer3d_detector:v0.1.0
+    environment:
+      # --- name ------
+      NAMESPACE: /
+      NAME: focalformer3d_detector
+      # --- inputs ----
+      INPUT_TOPIC: ~/input
+      # --- outputs ---
+      OUTPUT_TOPIC: ~/output
+      # --- other -----
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      USE_SIM_TIME: ${USE_SIM_TIME:-false}
+      PARAMS: ${PARAMS:-/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml}
+    command:
+      - /bin/bash
+      - -ic
+      - |
+        ros2 launch focalformer3d_detector focalformer3d_detector_launch.py \
+          namespace:=$${NAMESPACE} \
+          name:=$${NAME} \
+          log_level:=$${LOG_LEVEL} \
+          use_sim_time:=$${USE_SIM_TIME} \
+          params:=$${PARAMS} \
+          input_topic:=$${INPUT_TOPIC} \
+          output_topic:=$${OUTPUT_TOPIC}
+    # volumes:
+    #   - ./params.yml:/docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml

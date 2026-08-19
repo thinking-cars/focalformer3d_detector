@@ -1,0 +1,29 @@
+openadservice:
+  name: focalformer3d-detector
+  image: ghcr.io/thinking-cars/focalformer3d_detector:v0.1.0
+  env:
+    # --- name ------
+    NAMESPACE: /
+    NAME: focalformer3d_detector
+    # --- inputs ----
+    INPUT_TOPIC: ~/input
+    # --- outputs ---
+    OUTPUT_TOPIC: ~/output
+    # --- other -----
+    LOG_LEVEL: info
+    USE_SIM_TIME: false
+    PARAMS: /docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml
+  args:
+  - /bin/bash
+  - -ic
+  - |
+    ros2 launch focalformer3d_detector focalformer3d_detector_launch.py \
+      namespace:=${NAMESPACE} \
+      name:=${NAME} \
+      log_level:=${LOG_LEVEL} \
+      use_sim_time:=${USE_SIM_TIME} \
+      params:=${PARAMS} \
+      input_topic:=${INPUT_TOPIC} \
+      output_topic:=${OUTPUT_TOPIC}
+  rosParamFileMountPath: /docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/config/params.yml
+  rosParamFileData: null

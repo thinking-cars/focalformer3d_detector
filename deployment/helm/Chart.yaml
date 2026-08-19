@@ -1,0 +1,9 @@
+apiVersion: v2
+name: focalformer3d-detector
+version: 0.1.0
+appVersion: 0.1.0
+description: ROS 2 package integrating the official FocalFormer3D implementation by NVlabs
+dependencies:
+  - repository: oci://ghcr.io/openads-project/openads-helm
+    name: openadservice
+    version: 1.0.0
