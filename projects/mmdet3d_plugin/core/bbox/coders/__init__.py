@@ -1,1 +1,0 @@
-from .transfusion_bbox_coder import TransFusionBBoxCoder
