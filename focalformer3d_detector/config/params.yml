@@ -1,0 +1,9 @@
+/**/*:
+  ros__parameters:
+    config_file: /docker-ros/ws/install/focalformer3d_detector/share/focalformer3d_detector/FocalFormer3D/projects/configs/focalformer3d/FocalFormer3D_L.py
+    # the checkpoint is not shipped with the package, it is downloaded to this path on first use
+    checkpoint_file: /docker-ros/ws/checkpoints/FocalFormer3D_L_ep6_mAP664_NDS709.pth
+    checkpoint_url: https://drive.google.com/file/d/1OMj00n_pbAotlGi2JyqptYSgpt6mfyu5/view?usp=sharing
+    device: cuda:0
+    score_threshold: 0.1
+    intensity_scale: 1.0

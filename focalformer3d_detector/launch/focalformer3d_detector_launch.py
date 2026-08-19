@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Copyright Institute for Automotive Engineering (ika), RWTH Aachen University
-# SPDX-License-Identifier: Apache-2.0
+# Copyright Thinking Cars GmbH
+# SPDX-License-Identifier: LicenseRef-NvidiaSourceCodeLicense-NC
 
 import os
 
@@ -13,20 +13,19 @@ from launch_ros.actions import Node, SetParameter
 
 
 def generate_launch_description():
-    """Generate the launch description for the openads_demo_module node."""
+    """Generate the ROS 2 launch description for the focalformer3d detector node."""
 
     remappable_topics = [
         DeclareLaunchArgument("input_topic", default_value="~/input"),
         DeclareLaunchArgument("output_topic", default_value="~/output"),
-        DeclareLaunchArgument("service_topic", default_value="~/service"),
     ]
 
     args = [
-        DeclareLaunchArgument("name", default_value="openads_demo_module", description="node name"),
+        DeclareLaunchArgument("name", default_value="focalformer3d_detector", description="node name"),
         DeclareLaunchArgument("namespace", default_value="", description="node namespace"),
         DeclareLaunchArgument(
             "params",
-            default_value=os.path.join(get_package_share_directory("openads_demo_module"), "config", "params.yml"),
+            default_value=os.path.join(get_package_share_directory("focalformer3d_detector"), "config", "params.yml"),
             description="path to parameter file",
         ),
         DeclareLaunchArgument(
@@ -38,8 +37,8 @@ def generate_launch_description():
 
     nodes = [
         Node(
-            package="openads_demo_module",
-            executable="openads_demo_module",
+            package="focalformer3d_detector",
+            executable="focalformer3d_detector",
             namespace=LaunchConfiguration("namespace"),
             name=LaunchConfiguration("name"),
             parameters=[LaunchConfiguration("params")],

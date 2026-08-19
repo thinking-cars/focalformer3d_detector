@@ -1,0 +1,38 @@
+services:
+
+  autonomy-datasets:
+    image: ghcr.io/thinking-cars/autonomy_datasets:v1.3.0
+    command: bash -ic "ros2 launch autonomy_datasets autonomy_datasets.launch.py dataset:=nuscenes loop:=true"
+    environment:
+      RMW_IMPLEMENTATION: rmw_fastrtps_cpp
+      DISPLAY: ${DISPLAY:-""}
+    volumes:
+      - $DATASET_DIR:/datasets
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  focalformer3d-detector:
+    extends:
+      file: docker/compose/docker-compose.yml
+      service: focalformer3d-detector
+    environment:
+      RMW_IMPLEMENTATION: rmw_fastrtps_cpp
+      USE_SIM_TIME: true
+      INPUT_TOPIC: /lidar_01/point_cloud
+      OUTPUT_TOPIC: /detected_objects
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  focalformer3d-checkpoints:
