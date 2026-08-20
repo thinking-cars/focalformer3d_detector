@@ -5,7 +5,7 @@
   <a href="https://github.com/thinking-cars/focalformer3d_detector/releases/latest"><img src="https://img.shields.io/github/v/release/thinking-cars/focalformer3d_detector"/></a>
   <a href="https://github.com/thinking-cars/focalformer3d_detector/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thinking-cars/focalformer3d_detector"/></a>
   <br>
-  <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <!-- <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docker-ros.yml/badge.svg"/></a> -->
   <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/compose-oci.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/compose-oci.yml/badge.svg"/></a>
   <a href="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/helm-oci.yml"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/helm-oci.yml/badge.svg"/></a>
   <a href="https://thinking-cars.github.io/focalformer3d_detector"><img src="https://github.com/thinking-cars/focalformer3d_detector/actions/workflows/docs.yml/badge.svg"/></a>
